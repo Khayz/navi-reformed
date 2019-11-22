@@ -7,6 +7,83 @@
 
 body {
   background-color: gainsboro;
+  overflow-y: hidden;
+}
+
+.close {
+  -webkit-transition: .2s ease-in-out;
+  transition: .2s ease-in-out;
+  display: none;
+}
+
+.login {
+  height: 100%;
+  width: 100%;
+  position: absolute;
+  background-color: rgba(0, 0, 0, 0.7);
+}
+
+.login .exit {
+  height: 10vh;
+  color: #fff;
+  font-size: 3em;
+  cursor: pointer;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: end;
+      -ms-flex-pack: end;
+          justify-content: flex-end;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  margin-right: 50px;
+}
+
+.login .form-content {
+  position: relative;
+  z-index: 5;
+  height: 80vh;
+  width: 50%;
+  margin: 10px auto;
+  border-radius: 5px;
+  background-color: #fff;
+  padding-top: 20px;
+}
+
+.login .form-content h1 {
+  border-bottom: 1px solid red;
+  text-align: center;
+  background-color: #000;
+  color: #fff;
+}
+
+.login .form-content form {
+  height: 100%;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+
+.login .form-content form label {
+  font-size: 2em;
+  padding-top: 10px;
+}
+
+.login .form-content form input {
+  width: 50%;
+}
+
+.login .form-content form button {
+  margin-top: 20px;
+  width: 50%;
 }
 
 nav {
@@ -81,12 +158,13 @@ nav .burger {
 }
 
 .container-features {
-  padding: 20px;
+  padding-top: 20px;
   width: 80%;
-  height: 80vh;
-  margin: auto;
+  height: 65vh;
+  margin: 0 auto;
   color: #fff;
   background-color: #1b1616;
+  border: 1px solid #fff;
 }
 
 .container-features .title {
@@ -124,10 +202,11 @@ nav .burger {
 
 .container-functions {
   width: 80%;
-  padding-top: 70px;
+  position: relative;
   margin: 0 auto;
   background-color: #1b1616;
   color: #fff;
+  border: 1px solid #fff;
 }
 
 .container-functions h1 {
@@ -146,7 +225,7 @@ nav .burger {
       grid-template-columns: repeat(3, 1fr);
   -ms-grid-rows: 30% 50px 30% 60px;
       grid-template-rows: 30% 50px 30% 60px;
-  grid-gap: 10px;
+  grid-gap: 20px;
 }
 
 .container-functions .grid-functions .item {
@@ -169,6 +248,50 @@ nav .burger {
      object-fit: cover;
 }
 
+.info {
+  position: relative;
+  cursor: pointer;
+}
+
+.image {
+  opacity: 1;
+  display: block;
+  width: 100%;
+  height: auto;
+  -webkit-transition: .5s ease;
+  transition: .5s ease;
+  -webkit-backface-visibility: hidden;
+          backface-visibility: hidden;
+}
+
+.middle {
+  -webkit-transition: .5s ease;
+  transition: .5s ease;
+  opacity: 0;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  -webkit-transform: translate(-50%, -50%);
+          transform: translate(-50%, -50%);
+  -ms-transform: translate(-50%, -50%);
+  text-align: center;
+}
+
+.info:hover .image {
+  opacity: 0.3;
+}
+
+.info:hover .middle {
+  opacity: 1;
+}
+
+.text {
+  background-color: #4CAF50;
+  color: white;
+  font-size: 16px;
+  padding: 16px 32px;
+}
+
 footer {
   background-color: #1b1616;
 }
@@ -187,10 +310,19 @@ footer {
   font-size: 2em;
   color: #fff;
   padding: 5px;
+  -webkit-transition: .3s ease-in-out;
+  transition: .3s ease-in-out;
+}
+
+.social-icons div i:nth-child(1):hover {
+  color: #275fc7;
+}
+
+.social-icons div i:nth-child(2):hover {
+  color: #32d2fa;
 }
 
 .social-icons div i:hover {
-  color: blue;
-  font-size: 40px;
+  font-size: 2.5em;
 }
 /*# sourceMappingURL=style.css.map */
